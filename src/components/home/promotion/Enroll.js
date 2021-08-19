@@ -39,7 +39,6 @@ class Enroll extends Component {
 
         newElement.valid = validData[0];
         newElement.validationMessage = validData[1];
-        console.log(validData);
 
         newFormData[element.id] = newElement;
 
