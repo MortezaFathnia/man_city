@@ -1,5 +1,5 @@
-import React from 'react'
-import AdminNav from '../components/admin/nav/AdminNav'
+import React from 'react';
+import AdminNav from '../components/admin/nav/AdminNav';
 
 const AdminLayout = (props) => {
     return (
@@ -14,4 +14,4 @@ const AdminLayout = (props) => {
     )
 }
 
-export default AdminLayout
+export default AdminLayout;
