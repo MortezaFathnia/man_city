@@ -20,7 +20,7 @@ const FormFields = ({ formData, id, change }) => {
                 formTemplate = (
                     <div>
                         {formData.showLabel ?
-                            <div className="label_input">
+                            <div className="label_inputs">
                                 {formData.config.label}
                             </div>
                             : null
@@ -38,7 +38,7 @@ const FormFields = ({ formData, id, change }) => {
                 formTemplate = (
                     <div>
                         {formData.showLabel ?
-                            <div className="label_input">
+                            <div className="label_inputs">
                                 {formData.config.label}
                             </div>
                             : null
