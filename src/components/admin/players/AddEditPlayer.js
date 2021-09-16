@@ -3,6 +3,7 @@ import AdminLayout from '../../../Hoc/AdminLayout';
 
 import FormFields from '../../ui/formFields';
 import { validate } from '../../ui/misc';
+import Fileuploader from '../../ui/fileuploader';
 
 import { firebasePlayers, firebaseDB, firebase } from '../../../firebase';
 
@@ -80,19 +81,28 @@ class AddEditPlayer extends Component {
                 validationMessage: '',
                 showLabel: true
             },
+            image:{
+                element:'image',
+                value:'',
+                validation: {
+                    required: true
+                },
+                valid:true
+            }
         }
     }
 
     componentDidMount() {
         const playerId = this.props.match.params.id;
-
+        
         if(!playerId){
             this.setState({
-                fromType:'Add Player'
+                formType:'Add Player'
             })
         }else{
+            
             this.setState({
-                fromType:'Edit Player'
+                formType:'Edit Player'
             })
         }
     }
@@ -141,6 +151,11 @@ class AddEditPlayer extends Component {
                 <div className="editplayers_dialog_wrapper">
                     <h2>{this.state.formType}</h2>
                     <form onSubmit={(event) => this.submitForm()}>
+                        <Fileuploader 
+                            dir='players'
+                            tag={'Player image'}
+                            defaultImg={this.state.defaultImg}
+                        />
                         <FormFields
                             id={'name'}
                             formData={this.state.formData.name}
